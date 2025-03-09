@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
     return (
@@ -10,44 +11,44 @@ const Footer: React.FC = () => {
                         <h4 className="text-2xl font-semibold text-gray-100">Company</h4>
                         <ul className="space-y-2">
                             <li>
-                                <a
+                                <Link
                                     href="/"
                                     className="text-gray-400 hover:text-white transition-colors"
                                 >
                                     About Us
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
+                                <Link
                                     href="/"
                                     className="text-gray-400 hover:text-white transition-colors"
                                 >
                                     Careers
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
+                                <Link
                                     href="/"
                                     className="text-gray-400 hover:text-white transition-colors"
                                 >
                                     Blog
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
+                                <Link
                                     href="/"
                                     className="text-gray-400 hover:text-white transition-colors"
                                 >
                                     Privacy Policy
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
+                                <Link
                                     href="/"
                                     className="text-gray-400 hover:text-white transition-colors"
                                 >
                                     Terms of Service
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -57,36 +58,36 @@ const Footer: React.FC = () => {
                         <h4 className="text-2xl font-semibold text-gray-100">Quick Links</h4>
                         <ul className="space-y-2">
                             <li>
-                                <a
+                                <Link
                                     href="/"
                                     className="text-gray-400 hover:text-white transition-colors"
                                 >
                                     Home
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="/"
+                                <Link
+                                    href="/shop"
                                     className="text-gray-400 hover:text-white transition-colors"
                                 >
                                     Shop
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="/"
+                                <Link
+                                    href="/contact"
                                     className="text-gray-400 hover:text-white transition-colors"
                                 >
                                     Contact
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a
-                                    href="/"
+                                <Link
+                                    href="/support"
                                     className="text-gray-400 hover:text-white transition-colors"
                                 >
                                     Support
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -95,16 +96,36 @@ const Footer: React.FC = () => {
                     <div className="space-y-4">
                         <h4 className="text-2xl font-semibold text-gray-100">Follow Us</h4>
                         <div className="flex space-x-6 text-gray-400">
-                            <a href="/" className="hover:text-white transition-colors">
+                            <a
+                                href="https://facebook.com"
+                                className="hover:text-white transition-colors"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <i className="fab fa-facebook-f text-2xl"></i>
                             </a>
-                            <a href="/" className="hover:text-white transition-colors">
+                            <a
+                                href="https://twitter.com"
+                                className="hover:text-white transition-colors"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <i className="fab fa-twitter text-2xl"></i>
                             </a>
-                            <a href="/" className="hover:text-white transition-colors">
+                            <a
+                                href="https://instagram.com"
+                                className="hover:text-white transition-colors"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <i className="fab fa-instagram text-2xl"></i>
                             </a>
-                            <a href="/" className="hover:text-white transition-colors">
+                            <a
+                                href="https://linkedin.com"
+                                className="hover:text-white transition-colors"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
                                 <i className="fab fa-linkedin-in text-2xl"></i>
                             </a>
                         </div>
