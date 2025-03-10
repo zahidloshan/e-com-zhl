@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
     return (
-        <div className=" px-6 py-2 bg-gray-100">
+        <div className=" px-2 py-2 bg-gray-100">
             <Navbar />
             <Hero />
 
