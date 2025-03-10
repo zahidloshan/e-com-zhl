@@ -210,7 +210,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { FaShoppingCart, FaPlay } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Products = () => {
     const [products, setProducts] = useState<any[]>([]);

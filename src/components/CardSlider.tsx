@@ -5,6 +5,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import Image from "next/image";
 
 const slides = [
     {
@@ -49,7 +50,7 @@ const CardSlider = () => {
 
                             {/* Right Side - Image */}
                             <div className="md:w-1/2">
-                                <img
+                                <Image
                                     src={slide.img}
                                     alt={slide.title}
                                     className="w-full h-full object-cover"
