@@ -256,9 +256,6 @@ const Products = () => {
                                 <button className="absolute top-2 right-2 bg-black text-white px-4 py-2 rounded flex items-center">
                                     <FaShoppingCart className="mr-2" /> Buy Now
                                 </button>
-                                {/* <button className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 text-white rounded-full w-10 h-10 mx-auto my-auto">
-                                    <FaPlay />
-                                </button> */}
                             </div>
 
                             {/* Product Details */}
