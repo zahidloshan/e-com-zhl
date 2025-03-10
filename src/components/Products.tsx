@@ -212,8 +212,23 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaShoppingCart } from "react-icons/fa";
 
+// Define the product type
+type Product = {
+    id: number;
+    title: string;
+    price: number;
+    thumbnail: string;
+    availabilityStatus: boolean;
+    name: string;
+    color: string;
+    leatherType: string;
+    leatherHide: string;
+    size: string;
+    description: string;
+};
+
 const Products = () => {
-    const [products, setProducts] = useState<any[]>([]);
+    const [products, setProducts] = useState<Product[]>([]); // Use Product[] type
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
