@@ -20,10 +20,7 @@ const About = () => {
                 {/* Mission Section */}
                 <section className="py-16 px-4 sm:px-12 text-center rounded-b-lg">
                     <h2 className="text-3xl font-semibold text-gray-800">Our Mission</h2>
-                    <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-                        At <strong>[Brand Name]</strong>, we believe that accessories are more than
-                        just embellishments&#39;; they are a reflection of your unique style.
-                    </p>
+                    <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">test</p>
                 </section>
 
                 {/* Values Section */}
