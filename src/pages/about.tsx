@@ -82,8 +82,9 @@ const About = () => {
                 <section className="py-16 px-4 sm:px-12 text-center">
                     <h2 className="text-3xl font-semibold text-gray-800">Contact Us</h2>
                     <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-                        Have questions or inquiries? Feel free to reach out to us at any time. We're
-                        here to help and ensure your experience with us is as smooth as possible.
+                        Have questions or inquiries? Feel free to reach out to us at any time.
+                        We&#39;re here to help and ensure your experience with us is as smooth as
+                        possible.
                     </p>
                     <button className="mt-8 bg-black hover:bg-gray-800 text-white py-2 px-6 rounded-lg transition-all">
                         Get in Touch
