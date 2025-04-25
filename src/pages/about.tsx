@@ -22,7 +22,7 @@ const About = () => {
                     <h2 className="text-3xl font-semibold text-gray-800">Our Mission</h2>
                     <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
                         At <strong>[Brand Name]</strong>, we believe that accessories are more than
-                        just embellishments&mdash;they are a reflection of your unique style.
+                        just embellishments&#39; they are a reflection of your unique style.
                     </p>
                 </section>
 
@@ -74,7 +74,7 @@ const About = () => {
                         Our team consists of passionate designers, creators, and customer service
                         professionals dedicated to offering the best accessories for our customers.
                         Each person brings unique expertise to ensure we provide the best possible
-                        service and products.
+                        service&#39;s and products.
                     </p>
                 </section>
 
