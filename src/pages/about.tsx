@@ -22,10 +22,7 @@ const About = () => {
                     <h2 className="text-3xl font-semibold text-gray-800">Our Mission</h2>
                     <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
                         At <strong>[Brand Name]</strong>, we believe that accessories are more than
-                        just embellishments—they are a reflection of your unique style. Our mission
-                        is to provide high-quality, timeless accessories that blend fashion and
-                        functionality. Whether you're looking for bags, wallets, belts, or jewelry,
-                        we have something designed with you in mind.
+                        just embellishments&mdash;they are a reflection of your unique style.
                     </p>
                 </section>
 
