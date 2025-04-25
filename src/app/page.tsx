@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Products from "@/components/Products";
 import Footer from "@/components/Footer";
-import About from "@/pages/about";
 
 export default function Home() {
     return (

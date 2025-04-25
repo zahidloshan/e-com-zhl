@@ -316,12 +316,138 @@
 
 // export default Products;
 
+// "use client";
+
+// import { useEffect, useState } from "react";
+// import Image from "next/image";
+// import { FaShoppingCart } from "react-icons/fa";
+// import Link from "next/link";
+// // Define the product type
+// type Product = {
+//     id: number;
+//     title: string;
+//     price: number;
+//     thumbnail: string;
+//     availabilityStatus: boolean;
+//     name: string;
+//     color: string;
+//     leatherType: string;
+//     leatherHide: string;
+//     size: string;
+//     description: string;
+// };
+
+// const Products = () => {
+//     const [products, setProducts] = useState<Product[]>([]);
+//     const [loading, setLoading] = useState(true);
+
+//     useEffect(() => {
+//         fetch("https://dummyjson.com/products")
+//             .then((res) => res.json())
+//             .then((data) => {
+//                 setProducts(data.products.slice(0, 8));
+//                 setLoading(false);
+//             })
+//             .catch((err) => console.error("Error fetching products:", err));
+//     }, []);
+
+//     return (
+//         <div className="container mx-auto py-10 ">
+//             <h2 className="text-4xl font-bold text-center mb-10 text-gray-800">Our Products</h2>
+
+//             {loading ? (
+//                 <div className="w-10 h-10 border-4  border-black-400 border-t-transparent rounded-full animate-spin"></div>
+//             ) : (
+//                 // <p className="text-center text-lg font-medium text-gray-500">Loading products...</p>
+//                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+//                     {products.map((product) => (
+//                         <Link href={`/products/${product.id}`}>
+//                             <div
+//                                 key={product.id}
+//                                 className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden group"
+//                             >
+//                                 {/* Product Image */}
+//                                 <div className="relative flex items-center justify-center flex-col bg-white pt-14 pb-4">
+//                                     {/* Price Tag */}
+//                                     <span className="absolute top-3 left-3 bg-black/80 text-white text-sm px-3 py-1 rounded-full font-semibold shadow-md">
+//                                         BDT {product.price}
+//                                     </span>
+
+//                                     {/* Product Image (rounded with hover glow) */}
+//                                     <div className="w-32 h-32 rounded-full overflow-hidden shadow-md border border-gray-300 group-hover:shadow-[0_0_15px_rgba(0,0,0,0.3)] transition-all duration-300">
+//                                         <Image
+//                                             src={product.thumbnail}
+//                                             alt={product.title}
+//                                             width={128}
+//                                             height={128}
+//                                             className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-300"
+//                                         />
+//                                     </div>
+//                                 </div>
+
+//                                 {/* Product Info */}
+//                                 <div className="p-4 space-y-2">
+//                                     {product.availabilityStatus ? (
+//                                         <p className="text-xs text-green-600 font-semibold">
+//                                             ✅ In Stock
+//                                         </p>
+//                                     ) : (
+//                                         <p className="text-xs text-red-500 font-semibold">
+//                                             ❌ Out of Stock
+//                                         </p>
+//                                     )}
+//                                     <h3 className="text-lg font-bold text-gray-800 mb-2">
+//                                         {product.title}
+//                                     </h3>
+
+//                                     {/* Two-column layout
+//                                 <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
+//                                     <p>
+//                                         <span className="font-semibold">Color:</span>{" "}
+//                                         {product.color}
+//                                     </p>
+//                                     <p>
+//                                         <span className="font-semibold">Leather Type:</span>{" "}
+//                                         {product.leatherType}
+//                                     </p>
+//                                     <p>
+//                                         <span className="font-semibold">Hide:</span>{" "}
+//                                         {product.leatherHide}
+//                                     </p>
+//                                     <p>
+//                                         <span className="font-semibold">Size:</span> {product.size}
+//                                     </p>
+//                                 </div>
+
+//                                 <hr className="my-3" /> */}
+//                                     <p className="text-sm text-gray-500">
+//                                         {product.description.slice(0, 70)}...
+//                                     </p>
+//                                     {/* Buy Button at Bottom */}
+//                                     <div className="px-4 pb-4">
+//                                         <button className="w-full mt-4 bg-black hover:bg-gray-800 text-white text-sm py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+//                                             <FaShoppingCart /> Buy Now
+//                                         </button>
+//                                     </div>
+//                                 </div>
+//                             </div>
+//                         </Link>
+//                     ))}
+//                 </div>
+//             )}
+//         </div>
+//     );
+// };
+
+// export default Products;
+
 "use client";
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
+
 // Define the product type
 type Product = {
     id: number;
@@ -352,28 +478,24 @@ const Products = () => {
     }, []);
 
     return (
-        <div className="container mx-auto py-10 ">
+        <div className="container mx-auto py-10">
             <h2 className="text-4xl font-bold text-center mb-10 text-gray-800">Our Products</h2>
 
             {loading ? (
-                <div className="w-10 h-10 border-4  border-black-400 border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-10 h-10 border-4 border-black-400 border-t-transparent rounded-full animate-spin mx-auto"></div>
             ) : (
-                // <p className="text-center text-lg font-medium text-gray-500">Loading products...</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     {products.map((product) => (
-                        <Link href={`/products/${product.id}`}>
-                            <div
-                                key={product.id}
-                                className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden group"
-                            >
-                                {/* Product Image */}
+                        <Link key={product.id} href={`/products/${product.id}`}>
+                            <div className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden group">
+                                {/* Image Section */}
                                 <div className="relative flex items-center justify-center flex-col bg-white pt-14 pb-4">
-                                    {/* Price Tag */}
+                                    {/* Price Badge */}
                                     <span className="absolute top-3 left-3 bg-black/80 text-white text-sm px-3 py-1 rounded-full font-semibold shadow-md">
                                         BDT {product.price}
                                     </span>
 
-                                    {/* Product Image (rounded with hover glow) */}
+                                    {/* Product Image */}
                                     <div className="w-32 h-32 rounded-full overflow-hidden shadow-md border border-gray-300 group-hover:shadow-[0_0_15px_rgba(0,0,0,0.3)] transition-all duration-300">
                                         <Image
                                             src={product.thumbnail}
@@ -400,30 +522,11 @@ const Products = () => {
                                         {product.title}
                                     </h3>
 
-                                    {/* Two-column layout
-                                <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
-                                    <p>
-                                        <span className="font-semibold">Color:</span>{" "}
-                                        {product.color}
-                                    </p>
-                                    <p>
-                                        <span className="font-semibold">Leather Type:</span>{" "}
-                                        {product.leatherType}
-                                    </p>
-                                    <p>
-                                        <span className="font-semibold">Hide:</span>{" "}
-                                        {product.leatherHide}
-                                    </p>
-                                    <p>
-                                        <span className="font-semibold">Size:</span> {product.size}
-                                    </p>
-                                </div>
-
-                                <hr className="my-3" /> */}
                                     <p className="text-sm text-gray-500">
                                         {product.description.slice(0, 70)}...
                                     </p>
-                                    {/* Buy Button at Bottom */}
+
+                                    {/* Buy Now Button */}
                                     <div className="px-4 pb-4">
                                         <button className="w-full mt-4 bg-black hover:bg-gray-800 text-white text-sm py-2 rounded-full flex items-center justify-center gap-2 transition-all">
                                             <FaShoppingCart /> Buy Now
