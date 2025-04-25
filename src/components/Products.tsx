@@ -206,12 +206,122 @@
 // };
 
 // export default Product;
+// "use client";
+
+// import { useEffect, useState } from "react";
+// import Image from "next/image";
+// import { FaShoppingCart } from "react-icons/fa";
+
+// // Define the product type
+// type Product = {
+//     id: number;
+//     title: string;
+//     price: number;
+//     thumbnail: string;
+//     availabilityStatus: boolean;
+//     name: string;
+//     color: string;
+//     leatherType: string;
+//     leatherHide: string;
+//     size: string;
+//     description: string;
+// };
+
+// const Products = () => {
+//     const [products, setProducts] = useState<Product[]>([]); // Use Product[] type
+//     const [loading, setLoading] = useState(true);
+
+//     useEffect(() => {
+//         fetch("https://dummyjson.com/products")
+//             .then((res) => res.json())
+//             .then((data) => {
+//                 setProducts(data.products.slice(0, 8)); // Limit to 8 products
+//                 setLoading(false);
+//             })
+//             .catch((err) => console.error("Error fetching products:", err));
+//     }, []);
+
+//     return (
+//         <div className="container mx-auto py-10">
+//             <h2 className="text-3xl font-bold text-center mb-8">Our Products</h2>
+
+//             {loading ? (
+//                 <p className="text-center text-lg font-semibold text-gray-600 loading-text">
+//                     Loading products...
+//                 </p>
+//             ) : (
+//                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+//                     {products.map((product) => (
+//                         <div
+//                             key={product.id}
+//                             className="border rounded-lg shadow-lg p-4 bg-white relative"
+//                         >
+//                             {/* Product Image */}
+//                             <div className="relative">
+//                                 <Image
+//                                     src={product.thumbnail}
+//                                     alt={product.title}
+//                                     width={300}
+//                                     height={200}
+//                                     className="rounded-md w-full h-40 object-cover"
+//                                 />
+//                                 <span className="absolute top-2 left-2 bg-black px-3 py-1 rounded text-white px-4 py-2 font-semibold ">
+//                                     BDT {product.price}
+//                                 </span>
+//                                 <button className="absolute top-2 right-2 bg-black text-white px-4 py-2 rounded flex items-center">
+//                                     <FaShoppingCart className="mr-2" /> Buy Now
+//                                 </button>
+//                             </div>
+
+//                             {/* Product Details */}
+//                             <div className="p-4">
+//                                 {product.availabilityStatus ? (
+//                                     <p className="text-green-600 text-sm font-bold">IN STOCK</p>
+//                                 ) : (
+//                                     <p className="text-red-500 text-sm font-bold">OUT OF STOCK</p>
+//                                 )}
+
+//                                 <h3 className="text-lg font-bold mt-1">{product.name}</h3>
+
+//                                 <p className="text-gray-600 text-sm">
+//                                     <span className="font-semibold">Color:</span> {product.color}
+//                                 </p>
+//                                 <p className="text-gray-600 text-sm">
+//                                     <span className="font-semibold">Leather Type:</span>{" "}
+//                                     {product.leatherType}
+//                                 </p>
+//                                 <p className="text-gray-600 text-sm">
+//                                     <span className="font-semibold">Leather Hide:</span>{" "}
+//                                     {product.leatherHide}
+//                                 </p>
+//                                 <p className="text-gray-600 text-sm">
+//                                     <span className="font-semibold">Size:</span> {product.size}
+//                                 </p>
+//                             </div>
+
+//                             {/* Product Info */}
+//                             <div className="mt-4 text-center">
+//                                 <h3 className="font-bold text-lg">{product.title}</h3>
+//                                 <p className="text-sm text-gray-500">
+//                                     {product.description.slice(0, 60)}...
+//                                 </p>
+//                             </div>
+//                         </div>
+//                     ))}
+//                 </div>
+//             )}
+//         </div>
+//     );
+// };
+
+// export default Products;
+
 "use client";
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaShoppingCart } from "react-icons/fa";
-
+import Link from "next/link";
 // Define the product type
 type Product = {
     id: number;
@@ -228,85 +338,100 @@ type Product = {
 };
 
 const Products = () => {
-    const [products, setProducts] = useState<Product[]>([]); // Use Product[] type
+    const [products, setProducts] = useState<Product[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch("https://dummyjson.com/products")
             .then((res) => res.json())
             .then((data) => {
-                setProducts(data.products.slice(0, 8)); // Limit to 8 products
+                setProducts(data.products.slice(0, 8));
                 setLoading(false);
             })
             .catch((err) => console.error("Error fetching products:", err));
     }, []);
 
     return (
-        <div className="container mx-auto py-10">
-            <h2 className="text-3xl font-bold text-center mb-8">Our Products</h2>
+        <div className="container mx-auto py-10 ">
+            <h2 className="text-4xl font-bold text-center mb-10 text-gray-800">Our Products</h2>
 
             {loading ? (
-                <p className="text-center text-lg font-semibold text-gray-600 loading-text">
-                    Loading products...
-                </p>
+                <div className="w-10 h-10 border-4  border-black-400 border-t-transparent rounded-full animate-spin"></div>
             ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                // <p className="text-center text-lg font-medium text-gray-500">Loading products...</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     {products.map((product) => (
-                        <div
-                            key={product.id}
-                            className="border rounded-lg shadow-lg p-4 bg-white relative"
-                        >
-                            {/* Product Image */}
-                            <div className="relative">
-                                <Image
-                                    src={product.thumbnail}
-                                    alt={product.title}
-                                    width={300}
-                                    height={200}
-                                    className="rounded-md w-full h-40 object-cover"
-                                />
-                                <span className="absolute top-2 left-2 bg-black px-3 py-1 rounded text-white px-4 py-2 font-semibold ">
-                                    BDT {product.price}
-                                </span>
-                                <button className="absolute top-2 right-2 bg-black text-white px-4 py-2 rounded flex items-center">
-                                    <FaShoppingCart className="mr-2" /> Buy Now
-                                </button>
+                        <Link href={`/products/${product.id}`}>
+                            <div
+                                key={product.id}
+                                className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 overflow-hidden group"
+                            >
+                                {/* Product Image */}
+                                <div className="relative flex items-center justify-center flex-col bg-white pt-14 pb-4">
+                                    {/* Price Tag */}
+                                    <span className="absolute top-3 left-3 bg-black/80 text-white text-sm px-3 py-1 rounded-full font-semibold shadow-md">
+                                        BDT {product.price}
+                                    </span>
+
+                                    {/* Product Image (rounded with hover glow) */}
+                                    <div className="w-32 h-32 rounded-full overflow-hidden shadow-md border border-gray-300 group-hover:shadow-[0_0_15px_rgba(0,0,0,0.3)] transition-all duration-300">
+                                        <Image
+                                            src={product.thumbnail}
+                                            alt={product.title}
+                                            width={128}
+                                            height={128}
+                                            className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-300"
+                                        />
+                                    </div>
+                                </div>
+
+                                {/* Product Info */}
+                                <div className="p-4 space-y-2">
+                                    {product.availabilityStatus ? (
+                                        <p className="text-xs text-green-600 font-semibold">
+                                            ✅ In Stock
+                                        </p>
+                                    ) : (
+                                        <p className="text-xs text-red-500 font-semibold">
+                                            ❌ Out of Stock
+                                        </p>
+                                    )}
+                                    <h3 className="text-lg font-bold text-gray-800 mb-2">
+                                        {product.title}
+                                    </h3>
+
+                                    {/* Two-column layout
+                                <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-600">
+                                    <p>
+                                        <span className="font-semibold">Color:</span>{" "}
+                                        {product.color}
+                                    </p>
+                                    <p>
+                                        <span className="font-semibold">Leather Type:</span>{" "}
+                                        {product.leatherType}
+                                    </p>
+                                    <p>
+                                        <span className="font-semibold">Hide:</span>{" "}
+                                        {product.leatherHide}
+                                    </p>
+                                    <p>
+                                        <span className="font-semibold">Size:</span> {product.size}
+                                    </p>
+                                </div>
+
+                                <hr className="my-3" /> */}
+                                    <p className="text-sm text-gray-500">
+                                        {product.description.slice(0, 70)}...
+                                    </p>
+                                    {/* Buy Button at Bottom */}
+                                    <div className="px-4 pb-4">
+                                        <button className="w-full mt-4 bg-black hover:bg-gray-800 text-white text-sm py-2 rounded-full flex items-center justify-center gap-2 transition-all">
+                                            <FaShoppingCart /> Buy Now
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-
-                            {/* Product Details */}
-                            <div className="p-4">
-                                {product.availabilityStatus ? (
-                                    <p className="text-green-600 text-sm font-bold">IN STOCK</p>
-                                ) : (
-                                    <p className="text-red-500 text-sm font-bold">OUT OF STOCK</p>
-                                )}
-
-                                <h3 className="text-lg font-bold mt-1">{product.name}</h3>
-
-                                <p className="text-gray-600 text-sm">
-                                    <span className="font-semibold">Color:</span> {product.color}
-                                </p>
-                                <p className="text-gray-600 text-sm">
-                                    <span className="font-semibold">Leather Type:</span>{" "}
-                                    {product.leatherType}
-                                </p>
-                                <p className="text-gray-600 text-sm">
-                                    <span className="font-semibold">Leather Hide:</span>{" "}
-                                    {product.leatherHide}
-                                </p>
-                                <p className="text-gray-600 text-sm">
-                                    <span className="font-semibold">Size:</span> {product.size}
-                                </p>
-                            </div>
-
-                            {/* Product Info */}
-                            <div className="mt-4 text-center">
-                                <h3 className="font-bold text-lg">{product.title}</h3>
-                                <p className="text-sm text-gray-500">
-                                    {product.description.slice(0, 60)}...
-                                </p>
-                            </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             )}
