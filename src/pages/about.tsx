@@ -8,8 +8,9 @@ import "../app/globals.css";
 const About = () => {
     return (
         <div className="px-2 py-2 bg-gray-100 min-h-screen">
+           <Navbar />
             <div className="container mx-auto overflow-hidden">
-                <Navbar />
+             
 
                 {/* Header Section */}
                 <header className="bg-black text-white py-12 text-center rounded-b-lg">
