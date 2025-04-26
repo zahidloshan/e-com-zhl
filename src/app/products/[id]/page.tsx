@@ -216,8 +216,9 @@ const ProductDetails = () => {
 
     return (
         <div className="px-2 py-2 bg-gray-100">
+<Navbar />
             <div className="container mx-auto overflow-hidden">
-                <Navbar />
+                
                 <header className="bg-black text-white py-12 text-center rounded-b-lg">
                     <h1 className="text-4xl font-bold">Product Details</h1>
                     <p className="text-xl mt-4">Your trusted source for premium accessories</p>
@@ -267,7 +268,7 @@ const ProductDetails = () => {
                         <div>
                             {product ? (
                                 <>
-                                    <h1 className="text-3xl font-bold mb-2">{product.title}</h1>
+                                    <h1 className="text-3xl text-black font-bold mb-2">{product.title}</h1>
                                     <p className="text-gray-700 mb-1">
                                         <strong>Brand:</strong> {product.brand}
                                     </p>
@@ -276,7 +277,7 @@ const ProductDetails = () => {
                                     </p>
 
                                     <div className="flex items-center space-x-4 mb-4">
-                                        <span className="text-2xl font-bold text-black-600">
+                                        <span className="text-2xl text-black font-bold text-black-600">
                                             ৳ {product.price}
                                         </span>
                                         <span className="line-through text-gray-400">
@@ -286,7 +287,7 @@ const ProductDetails = () => {
                                                 (1 - product.discountPercentage / 100)
                                             ).toFixed(0)}
                                         </span>
-                                        <span className="bg-black-500  text-sm font-medium px-2 py-1 rounded">
+                                        <span className="bg-black-500  text-black text-sm font-medium px-2 py-1 rounded">
                                             {product.discountPercentage}% OFF
                                         </span>
                                     </div>
@@ -306,14 +307,14 @@ const ProductDetails = () => {
                                                 onClick={() =>
                                                     setQuantity((q) => Math.max(1, q - 1))
                                                 }
-                                                className="bg-gray-200 px-3 py-1 hover:bg-gray-300"
+                                                className="bg-gray-200 text-black px-3 py-1 hover:bg-gray-300"
                                             >
                                                 <FaMinus />
                                             </button>
                                             <span className="px-4">{quantity}</span>
                                             <button
                                                 onClick={() => setQuantity((q) => q + 1)}
-                                                className="bg-gray-200 px-3 py-1 hover:bg-gray-300"
+                                                className="bg-gray-200 text-black px-3 py-1 hover:bg-gray-300"
                                             >
                                                 <FaPlus />
                                             </button>
