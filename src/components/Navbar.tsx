@@ -68,44 +68,24 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu */}
-            {isOpen && (
+{isOpen && (
                 <div className="md:hidden bg-white shadow-md py-4">
                     <nav className="flex flex-col items-center gap-4">
-                        <Link
-                            href="/"
-                            onClick={() => setIsOpen(false)}
-                            className="relative group hover:text-black-600 transition-all duration-300"
-                        >
-                            Home
-                            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
-                        </Link>
-                        <Link
-                            href="/shop"
-                            onClick={() => setIsOpen(false)}
-                            className="relative group hover:text-black-600 transition-all duration-300"
-                        >
-                            Shop
-                            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
-                        </Link>
-                        <Link
-                            href="/about"
-                            onClick={() => setIsOpen(false)}
-                            className="relative group hover:text-black-600 transition-all duration-300"
-                        >
-                            About
-                            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
-                        </Link>
-                        <Link
-                            href="/contact"
-                            onClick={() => setIsOpen(false)}
-                            className="relative group hover:text-black-600 transition-all duration-300"
-                        >
-                            Contact
-                            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
-                        </Link>
+                        {["Home", "Shop", "About", "Contact"].map((item, idx) => (
+                            <Link
+                                key={idx}
+                                href={`/${item.toLowerCase() === "home" ? "" : item.toLowerCase()}`}
+                                onClick={() => setIsOpen(false)}
+                                className="relative group text-black hover:text-gray-700 transition-all duration-300"
+                            >
+                                {item}
+                                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+                            </Link>
+                        ))}
                     </nav>
                 </div>
             )}
+           
         </header>
     );
 };
