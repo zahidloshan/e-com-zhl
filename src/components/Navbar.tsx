@@ -9,9 +9,9 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        {/*  <header className="container mx-auto bg-white rounded-t-lg">*/}
-        <header className="sticky top-0 z-50 bg-white shadow-md">
-            <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
+<header className="sticky top-0 z-50 bg-white shadow-md">
+    <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
+    
                 {/* Logo */}
                 <Link href="/">
                     <Image src="/logo1.png" alt="Logo" width={50} height={30} />
