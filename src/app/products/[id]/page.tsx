@@ -311,7 +311,7 @@ const ProductDetails = () => {
                                             >
                                                 <FaMinus />
                                             </button>
-                                            <span className="px-4">{quantity}</span>
+                                            <span className="px-4 text-black">{quantity}</span>
                                             <button
                                                 onClick={() => setQuantity((q) => q + 1)}
                                                 className="bg-gray-200 text-black px-3 py-1 hover:bg-gray-300"
