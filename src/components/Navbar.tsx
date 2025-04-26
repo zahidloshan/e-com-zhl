@@ -9,9 +9,9 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-<header className="sticky top-0 z-50 bg-white shadow-md rounded-t-lg">
-    <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
-    
+        <header className="sticky top-0 z-50 bg-white shadow-md rounded-t-lg">
+            <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
+
                 {/* Logo */}
                 <Link href="/">
                     <Image src="/logo1.png" alt="Logo" width={50} height={30} />
@@ -24,42 +24,45 @@ const Navbar = () => {
                         className="relative group hover:text-black-600 transition-all duration-300"
                     >
                         Home
-                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"></span>
+                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                     <Link
                         href="/shop"
                         className="relative group hover:text-black-600 transition-all duration-300"
                     >
                         Shop
-                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"></span>
+                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                     </Link>
-
                     <Link
                         href="/about"
                         className="relative group hover:text-black-600 transition-all duration-300"
                     >
                         About
-                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"></span>
+                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                     <Link
                         href="/contact"
                         className="relative group hover:text-black-600 transition-all duration-300"
                     >
                         Contact
-                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"></span>
+                        <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                     </Link>
                 </nav>
 
                 {/* Icons */}
                 <div className="flex items-center gap-5">
                     <Link href="/cart">
-                        <ShoppingCart className="w-6 h-6 cursor-pointer hover:text-black-600" />
+                        <ShoppingCart className="w-6 h-6 text-black cursor-pointer transition-colors duration-300 hover:text-black-600" />
                     </Link>
                     <Link href="/account">
-                        <User className="w-6 h-6 cursor-pointer hover:text-black-600" />
+                        <User className="w-6 h-6 text-black cursor-pointer transition-colors duration-300 hover:text-black-600" />
                     </Link>
                     <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-                        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                        {isOpen ? (
+                            <X className="w-6 h-6 text-black transition-colors duration-300" />
+                        ) : (
+                            <Menu className="w-6 h-6 text-black transition-colors duration-300" />
+                        )}
                     </button>
                 </div>
             </div>
@@ -74,7 +77,7 @@ const Navbar = () => {
                             className="relative group hover:text-black-600 transition-all duration-300"
                         >
                             Home
-                            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"></span>
+                            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                         </Link>
                         <Link
                             href="/shop"
@@ -82,7 +85,7 @@ const Navbar = () => {
                             className="relative group hover:text-black-600 transition-all duration-300"
                         >
                             Shop
-                            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"></span>
+                            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                         </Link>
                         <Link
                             href="/about"
@@ -90,7 +93,7 @@ const Navbar = () => {
                             className="relative group hover:text-black-600 transition-all duration-300"
                         >
                             About
-                            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"></span>
+                            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                         </Link>
                         <Link
                             href="/contact"
@@ -98,7 +101,7 @@ const Navbar = () => {
                             className="relative group hover:text-black-600 transition-all duration-300"
                         >
                             Contact
-                            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full group-focus:w-full group-active:w-full"></span>
+                            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                         </Link>
                     </nav>
                 </div>
