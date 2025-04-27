@@ -184,7 +184,7 @@ const Hero = () => {
             >
                 {slides.map((slide, index) => (
                     <SwiperSlide key={index}>
-                        <div className="p-10 flex flex-col md:flex-row bg-white shadow-lg rounded-b-lg overflow-hidden">
+                        <div className="p-10 flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden">
                             {/* Left Side - Text */}
                             <div className="p-6 md:w-1/2 flex flex-col justify-center">
                                 <h2 className="text-3xl font-bold mb-3">{slide.title}</h2>
